@@ -2,6 +2,13 @@
 
 #include <iostream>
 
+void Tuple::print() {
+  std::cout << "TUPLE  x: " << x;
+  std::cout << ", y: " << y;
+  std::cout << ", z: " << z;
+  std::cout << ", w: " << w << std::endl;
+}
+
 bool Tuple::isAPoint() {
   if (w == 1.0) {
     return true;
@@ -42,13 +49,6 @@ float Tuple::getW() {
 }
 
 // -------------------------
-
-void printTuple(Tuple a) {
-  std::cout << "TUPLE  x: " << a.getX();
-  std::cout << ", y: " << a.getY();
-  std::cout << ", z: " << a.getZ();
-  std::cout << ", w: " << a.getW() << std::endl;
-}
 
 bool equal(float a, float b) {
   float epsilon = 0.00001;
