@@ -1,5 +1,7 @@
 #include "Tuple.h"
 
+#include <iostream>
+
 bool Tuple::isAPoint() {
   if (w == 1.0) {
     return true;
@@ -14,7 +16,57 @@ bool Tuple::isAVector() {
   return false;
 }
 
+float Tuple::getMagnitude() {
+  // pythagoream theorem
+  float magnitude;
+  magnitude = x*x + y*y + z*z + w*w;
+  magnitude = sqrt(magnitude);
+
+  return magnitude;
+}
+
+float Tuple::getX() {
+  return x;
+}
+
+float Tuple::getY() {
+  return y;
+}
+
+float Tuple::getZ() {
+  return z;
+}
+
+float Tuple::getW() {
+  return w;
+}
+
 // -------------------------
+
+void printTuple(Tuple a) {
+  std::cout << "TUPLE  x: " << a.getX();
+  std::cout << ", y: " << a.getY();
+  std::cout << ", z: " << a.getZ();
+  std::cout << ", w: " << a.getW() << std::endl;
+}
+
+bool equal(float a, float b) {
+  float epsilon = 0.00001;
+  if (std::abs(a - b) < epsilon) {
+    return true;
+  }
+  return false;
+}
+
+bool equalTuples(Tuple a, Tuple b) {
+  if (equal(a.getX(), b.getX()) && 
+    equal(a.getY(), b.getY()) &&
+    equal(a.getZ(), b.getZ()) &&
+    equal(a.getW(), b.getW())) {
+    return true;
+  }
+  return false;
+}
 
 Tuple createPoint(float x, float y, float z) {
   return Tuple(x, y, z, 1.0);
@@ -22,4 +74,81 @@ Tuple createPoint(float x, float y, float z) {
 
 Tuple createVector(float x, float y, float z) {
   return Tuple(x, y, z, 0.0);
+}
+
+Tuple addTuples(Tuple a, Tuple b){
+  float newX = a.getX() + b.getX();
+  float newY = a.getY() + b.getY();
+  float newZ = a.getZ() + b.getZ();
+  float newW = a.getW() + b.getW();
+
+  return Tuple(newX, newY, newZ, newW);
+}
+
+Tuple subtractTuples(Tuple a, Tuple b){
+  float newX = a.getX() - b.getX();
+  float newY = a.getY() - b.getY();
+  float newZ = a.getZ() - b.getZ();
+
+  if(a.isAPoint() && b.isAVector()) {
+    return createPoint(newX, newY, newZ);
+  }
+  else {
+    return createVector(newX, newY, newZ);
+  }
+}
+
+Tuple scalarMultiply(Tuple a, float s){
+  float newX = a.getX() * s;
+  float newY = a.getY() * s;
+  float newZ = a.getZ() * s;
+  float newW = a.getW() * s;
+
+  return Tuple(newX, newY, newZ, newW);
+}
+
+Tuple scalarDivide(Tuple a, float s){
+  float newX = a.getX() / s;
+  float newY = a.getY() / s;
+  float newZ = a.getZ() / s;
+  float newW = a.getW() / s;
+
+  return Tuple(newX, newY, newZ, newW);
+}
+
+Tuple negateTuple(Tuple a){
+  Tuple zeroTuple(0, 0, 0, 0);
+  Tuple result = subtractTuples(zeroTuple, a);
+  return Tuple(result.getX(), 
+    result.getY(), 
+    result.getZ(), 
+    0 - a.getW());
+}
+
+Tuple normalizeTuple(Tuple a){
+  float magnitude = a.getMagnitude();
+
+  float newX = a.getX() / magnitude;
+  float newY = a.getY() / magnitude;
+  float newZ = a.getZ() / magnitude;
+  float newW = a.getW() / magnitude;
+
+  return Tuple(newX, newY, newZ, newW);
+}
+
+float dotProduct(Tuple a, Tuple b){
+  float newX = a.getX() * b.getX();
+  float newY = a.getY() * b.getY();
+  float newZ = a.getZ() * b.getZ();
+  float newW = a.getW() * b.getW();
+
+  return newX + newY + newZ + newW;
+}
+
+Tuple crossProduct(Tuple a, Tuple b){
+  float newX = a.getY()*b.getZ() - a.getZ()*b.getY();
+  float newY = a.getZ()*b.getX() - a.getX() * b.getZ();
+  float newZ = a.getX()*b.getY() - a.getY() * b.getX();
+  
+  return createVector(newX, newY, newZ);
 }
