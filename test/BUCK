@@ -1,14 +1,10 @@
 cxx_test(
   name = 'driver',
   srcs = [
-    'DriverTest.cpp',
     'TupleTest.cpp',
   ],
   deps = [
-    '//:driver',
     '//src:tuple',
-    # ':gtest' -> rule name from BUCK file, within /gtest dir
-    #'//third-party/gtest:gtest', 
   ],
   framework = 'gtest',
 )
