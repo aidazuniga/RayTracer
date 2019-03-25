@@ -11,6 +11,6 @@ cxx_library(
     'Tuple.h',
   ],
   visibility = [
-    '//...',
+    'PUBLIC',
   ],
 )

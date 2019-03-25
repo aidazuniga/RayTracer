@@ -4,10 +4,10 @@ class Tuple {
 public:
 	Tuple(float x, float y, float z, float w) : x(x), y(y), z(z), w(w) {}
 
-	bool isAPoint();
-	bool isAVector();
+	virtual bool isAPoint();
+	virtual bool isAVector();
 
-  ~Tuple() = default;
+  	virtual ~Tuple() = default;
 
 	float x;
 	float y;
