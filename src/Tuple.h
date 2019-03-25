@@ -12,7 +12,12 @@ public:
 	float x;
 	float y;
 	float z;
+	float w;
 	
 private:
-	float w;
 };
+
+// -------------------------
+
+Tuple createPoint(float x, float y, float z);
+Tuple createVector(float x, float y, float z);

@@ -13,3 +13,13 @@ bool Tuple::isAVector() {
   }
   return false;
 }
+
+// -------------------------
+
+Tuple createPoint(float x, float y, float z) {
+  return Tuple(x, y, z, 1.0);
+}
+
+Tuple createVector(float x, float y, float z) {
+  return Tuple(x, y, z, 0.0);
+}
