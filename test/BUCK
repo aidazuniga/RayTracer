@@ -1,0 +1,12 @@
+cxx_test(
+  name = 'driver',
+  srcs = [
+    'DriverTest.cpp',
+  ],
+  deps = [
+    '//:driver',
+    # ':gtest' -> rule name from BUCK file, within /gtest dir
+    #'//third-party/gtest:gtest', 
+  ],
+  framework = 'gtest',
+)

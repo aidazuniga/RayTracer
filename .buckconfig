@@ -1,0 +1,3 @@
+[cxx]
+  cxxflags = -Wall --std=c++14
+  gtest_dep = //third-party/gtest:gtest
