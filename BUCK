@@ -25,6 +25,16 @@ cxx_library(
   ]
 )
 
+cxx_library(
+  name = 'tuple',
+  srcs = [
+    'Tuple.cpp',
+  ],
+  headers = [
+    'Tuple.h',
+  ],
+)
+
 cxx_binary(
   name = 'main',
   srcs = [
@@ -32,5 +42,6 @@ cxx_binary(
   ],
   deps = [
     ':driver',
+    ':tuple',
   ],
 )
