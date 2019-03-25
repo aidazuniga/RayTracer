@@ -1,0 +1,16 @@
+cxx_library(
+  name = 'tuple',
+  srcs = [
+    'Tuple.cpp',
+  ],
+  header_namespace = '',
+  exported_headers = [
+    'Tuple.h',
+  ],
+  headers = [
+    'Tuple.h',
+  ],
+  visibility = [
+    '//...',
+  ],
+)
