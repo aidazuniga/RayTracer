@@ -2,6 +2,7 @@
 #include <gmock/gmock.h>
 
 #include "../src/Tuple.h"
+#include "../src/Utils.h"
 
 class MockTuple : public Tuple {
 public:

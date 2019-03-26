@@ -7,7 +7,7 @@
 
 class Color {
 public:
-	Color(float r, float g, float b) : red(r), green(g), blue(b) {}
+	Color(float r = 0, float g = 0, float b = 0) : red(r), green(g), blue(b) {}
 
 	float getRed();
 	float getGreen();

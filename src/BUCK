@@ -1,4 +1,21 @@
 cxx_library(
+  name = 'utils',
+  srcs = [
+    'Utils.cpp',
+  ],
+  header_namespace = '',
+  exported_headers = [
+    'Utils.h',
+  ],
+  headers = [
+    'Utils.h',
+  ],
+  visibility = [
+    'PUBLIC',
+  ],
+)
+
+cxx_library(
   name = 'tuple',
   srcs = [
     'Tuple.cpp',
@@ -26,6 +43,23 @@ cxx_library(
   ],
   headers = [
     'Color.h',
+  ],
+  visibility = [
+    'PUBLIC',
+  ],
+)
+
+cxx_library(
+  name = 'canvas',
+  srcs = [
+    'Canvas.cpp',
+  ],
+  header_namespace = '',
+  exported_headers = [
+    'Canvas.h',
+  ],
+  headers = [
+    'Canvas.h',
   ],
   visibility = [
     'PUBLIC',

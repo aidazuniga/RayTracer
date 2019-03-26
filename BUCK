@@ -4,7 +4,9 @@ cxx_binary(
     'main.cpp',
   ],
   deps = [
+    '//src:utils',
     '//src:tuple',
     '//src:color',
+    '//src:canvas'
   ],
 )

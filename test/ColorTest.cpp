@@ -2,7 +2,7 @@
 #include <gmock/gmock.h>
 
 #include "../src/Color.h"
-#include "../src/Tuple.h"
+#include "../src/Utils.h"
 
 /*
 Scenario: Colors are (red, green, blue) tuples 

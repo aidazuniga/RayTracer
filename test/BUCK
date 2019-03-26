@@ -3,10 +3,13 @@ cxx_test(
   srcs = [
     'TupleTest.cpp',
     'ColorTest.cpp',
+    'CanvasTest.cpp',
   ],
   deps = [
+    '//src:utils',
     '//src:tuple',
     '//src:color',
+    '//src:canvas',
   ],
   framework = 'gtest',
 )
