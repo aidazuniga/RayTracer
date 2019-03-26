@@ -161,12 +161,12 @@ Scenario: Multiplying a tuple by a fraction
 */
 TEST(MultiplyingTuples, TupleTest) {
 	Tuple a = Tuple(1, -2, 3, -4);
-	Tuple result = scalarMultiply(a, 3.5);
+	Tuple result = scalarMultiplyTuple(a, 3.5);
 	Tuple expected = Tuple(3.5, -7, 10.5, -14);
 	EXPECT_TRUE(equalTuples(result, expected));
 
 	a = Tuple(1, -2, 3, -4);
-	result = scalarMultiply(a, 0.5);
+	result = scalarMultiplyTuple(a, 0.5);
 	expected = Tuple(0.5, -1, 1.5, -2);
 	EXPECT_TRUE(equalTuples(result, expected));
 }
@@ -178,7 +178,7 @@ Scenario: Dividing a tuple by a scalar
 */
 TEST(DividingTuple, TupleTest) {
 	Tuple a = Tuple(1, -2, 3, -4);
-	Tuple result = scalarDivide(a, 2);
+	Tuple result = scalarDivideTuple(a, 2);
 	Tuple expected = Tuple(0.5, -1, 1.5, -2);
 	EXPECT_TRUE(equalTuples(result, expected));
 }

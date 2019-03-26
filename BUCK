@@ -5,5 +5,6 @@ cxx_binary(
   ],
   deps = [
     '//src:tuple',
+    '//src:color',
   ],
 )

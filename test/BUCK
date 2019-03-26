@@ -2,9 +2,11 @@ cxx_test(
   name = 'driver',
   srcs = [
     'TupleTest.cpp',
+    'ColorTest.cpp',
   ],
   deps = [
     '//src:tuple',
+    '//src:color',
   ],
   framework = 'gtest',
 )

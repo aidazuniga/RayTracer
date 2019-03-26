@@ -19,7 +19,7 @@ public:
 	virtual float getZ();
 	virtual float getW();
 
-  	virtual ~Tuple() = default;
+  virtual ~Tuple() = default;
 	
 private:
 
@@ -40,8 +40,8 @@ Tuple createVector(float x, float y, float z);
 Tuple addTuples(Tuple a, Tuple b);
 Tuple subtractTuples(Tuple a, Tuple b);
 
-Tuple scalarMultiply(Tuple a, float s);
-Tuple scalarDivide(Tuple a, float s);
+Tuple scalarMultiplyTuple(Tuple a, float s);
+Tuple scalarDivideTuple(Tuple a, float s);
 
 Tuple negateTuple(Tuple a);
 

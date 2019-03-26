@@ -14,3 +14,20 @@ cxx_library(
     'PUBLIC',
   ],
 )
+
+cxx_library(
+  name = 'color',
+  srcs = [
+    'Color.cpp',
+  ],
+  header_namespace = '',
+  exported_headers = [
+    'Color.h',
+  ],
+  headers = [
+    'Color.h',
+  ],
+  visibility = [
+    'PUBLIC',
+  ],
+)

@@ -98,7 +98,7 @@ Tuple subtractTuples(Tuple a, Tuple b){
   }
 }
 
-Tuple scalarMultiply(Tuple a, float s){
+Tuple scalarMultiplyTuple(Tuple a, float s){
   float newX = a.getX() * s;
   float newY = a.getY() * s;
   float newZ = a.getZ() * s;
@@ -107,7 +107,7 @@ Tuple scalarMultiply(Tuple a, float s){
   return Tuple(newX, newY, newZ, newW);
 }
 
-Tuple scalarDivide(Tuple a, float s){
+Tuple scalarDivideTuple(Tuple a, float s){
   float newX = a.getX() / s;
   float newY = a.getY() / s;
   float newZ = a.getZ() / s;
