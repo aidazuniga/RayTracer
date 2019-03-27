@@ -50,9 +50,6 @@ Scenario: Constructing the PPM header
 		5 3
 		255
 		"""
-*/
-
-/*
 Scenario: Constructing the PPM pixel data 
 	Given c ← canvas(5, 3)
 		And c1 ← color(1.5, 0, 0) And c2 ← color(0, 0.5, 0) 
@@ -61,9 +58,39 @@ Scenario: Constructing the PPM pixel data
 		And write_pixel(c, 2, 1, c2) 
 		And write_pixel(c, 4, 2, c3) 
 		And ppm ← canvas_to_ppm(c)
-	Then lines 4-6 of ppm are """
+	Then lines 4-6 of ppm are
+		"""
     255 0 0 0 0 0 0 0 0 0 0 0 0 0 0
     0 0 0 0 0 0 0 128 0 0 0 0 0 0 0
     0 0 0 0 0 0 0 0 0 0 0 0 0 0 255
     """
 */
+TEST(ConsructPPMHeader, CanvasTest) {
+	Canvas c(5, 3);
+  Color c1(1.5, 0, 0);
+  Color c2(0, 0.5, 0);
+  Color c3(-0.5, 0, 1);
+  c.writePixel(0, 0, c1);
+  c.writePixel(2, 1, c2);
+  c.writePixel(4, 2, c3);
+  c.toPPM();
+}
+
+/*
+Scenario: Splitting long lines in PPM files
+  Given c ← canvas(10, 2)
+  When every pixel of c is set to color(1, 0.8, 0.6)
+    And ppm ← canvas_to_ppm(c)
+  Then lines 4-7 of ppm are
+    """
+    255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204
+    153 255 204 153 255 204 153 255 204 153 255 204 153
+    255 204 153 255 204 153 255 204 153 255 204 153 255 204 153 255 204
+    153 255 204 153 255 204 153 255 204 153 255 204 153
+    """
+*/
+TEST(PPMLongLines, CanvasTest) {
+	Canvas c(10, 2);
+  c.colorEveryPixel(Color(1, 0.8, 0.6));
+  c.toPPM();
+}

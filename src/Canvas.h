@@ -7,6 +7,8 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <stdio.h>
+#include <string.h>
 
 class Canvas {
 public:
@@ -23,6 +25,7 @@ public:
 
 	Color readPixel(int x, int y);
 	void writePixel(int x, int y, Color c);
+	void colorEveryPixel(Color c);
 
 	void toPPM();
 

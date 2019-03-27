@@ -17,3 +17,13 @@ float clamp(float f, float lower, float upper) {
   }
   return f;
 }
+
+int getNumLen(int n) {
+  if (n > 99) {
+    return 3;
+  }
+  else if (n > 9) {
+    return 2;
+  }
+  return 1;
+}
