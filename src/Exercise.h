@@ -5,4 +5,9 @@
 
 #include <iostream>
 
+struct Projectile tick(struct Environment env, struct Projectile proj);
+
+// -------------------------
+
 void chapterOne();
+void chapterTwo();

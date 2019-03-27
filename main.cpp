@@ -12,7 +12,7 @@
 int main() {
   std::cout << "Hello Ray Tracing World" << std::endl;
 
-  chapterOne();
+  // chapterOne();
 }
 
 // -------------------------
