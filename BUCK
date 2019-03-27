@@ -4,6 +4,7 @@ cxx_binary(
     'main.cpp',
   ],
   deps = [
+    '//src:exercise',
     '//src:utils',
     '//src:tuple',
     '//src:color',

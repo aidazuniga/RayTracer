@@ -1,4 +1,21 @@
 cxx_library(
+  name = 'exercise',
+  srcs = [
+    'Exercise.cpp',
+  ],
+  header_namespace = '',
+  exported_headers = [
+    'Exercise.h',
+  ],
+  headers = [
+    'Exercise.h',
+  ],
+  visibility = [
+    'PUBLIC',
+  ],
+)
+
+cxx_library(
   name = 'utils',
   srcs = [
     'Utils.cpp',
