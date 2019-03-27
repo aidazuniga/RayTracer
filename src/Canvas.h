@@ -1,7 +1,12 @@
 #pragma once
 
 #include "Color.h"
+#include "Utils.h"
+
+#include <math.h>
 #include <vector>
+#include <fstream>
+#include <iostream>
 
 class Canvas {
 public:
@@ -16,8 +21,10 @@ public:
 	float getWidth();
 	float getHeight();
 
-	Color readPixel(int y, int x);
-	void writePixel(int y, int x, Color c);
+	Color readPixel(int x, int y);
+	void writePixel(int x, int y, Color c);
+
+	void toPPM();
 
 	virtual ~Canvas() = default;
 

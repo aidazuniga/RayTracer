@@ -7,3 +7,13 @@ bool equal(float a, float b) {
   }
   return false;
 }
+
+float clamp(float f, float lower, float upper) {
+  if (f > upper) {
+    return upper;
+  }
+  else if (f < lower) {
+  	return lower;
+  }
+  return f;
+}

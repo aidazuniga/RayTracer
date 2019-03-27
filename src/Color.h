@@ -4,6 +4,7 @@
 #include <cmath>
 
 #include "Tuple.h"
+#include "Utils.h"
 
 class Color {
 public:
