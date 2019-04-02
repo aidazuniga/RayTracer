@@ -27,7 +27,7 @@ public:
 	void writePixel(int x, int y, Color c);
 	void colorEveryPixel(Color c);
 
-	void toPPM();
+	void toPPM(const std::string& filename);
 
 	virtual ~Canvas() = default;
 

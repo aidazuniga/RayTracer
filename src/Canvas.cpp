@@ -9,11 +9,16 @@ float Canvas::getHeight() {
 }
 
 Color Canvas::readPixel(int x, int y) {
-	return pixels[y][x];
+	if (y < height && y > 0 && x > 0 && x < width) {
+		return pixels[y][x];		
+	}
+	return Color(0, 0, 0);
 }
 
 void Canvas::writePixel(int x, int y, Color c) {
-	pixels[y][x] = c;
+	if (y < height && y > 0 && x > 0 && x < width) {
+		pixels[y][x] = c;
+	}
 }
 
 void Canvas::colorEveryPixel(Color c) {
@@ -24,9 +29,9 @@ void Canvas::colorEveryPixel(Color c) {
   }
 }
 
-void Canvas::toPPM() {
+void Canvas::toPPM(const std::string& filename) {
 	std::ofstream ppmFile;
-  ppmFile.open ("raytracer.ppm");
+  ppmFile.open(filename);
   
   ppmFile << "P3\n";
   ppmFile << width << " " << height << "\n";
