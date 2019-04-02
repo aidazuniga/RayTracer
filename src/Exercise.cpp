@@ -49,11 +49,11 @@ void chapterTwo(){
 	std::cout << "Chapter 2 Exercise" << std::endl;
 
 	int canvasH = 550;
-	int canvasW = 1151;
+	int canvasW = 900;
 	const std::string filename("chapter2.ppm");
 
 	Tuple pPos = createPoint(0, 1, 0);
-	Tuple pVel = normalizeTuple(createVector(1, 1, 0));
+	Tuple pVel = normalizeTuple(createVector(1, 1.8, 0));
 	pVel = scalarMultiplyTuple(pVel, 11.25);	// play around with velocity
 	struct Projectile p = {pPos, pVel};
 
@@ -67,8 +67,8 @@ void chapterTwo(){
 	while(p.position.getY() > 0) {
 		numTicks += 1;
 		p = tick(e, p);
-		std::cout << "projectile position: " << p.position.getX() << ", ";
-		std::cout << p.position.getY() << std::endl;
+		// std::cout << "projectile position: " << p.position.getX() << ", ";
+		// std::cout << p.position.getY() << std::endl;
 
 		int newY = canvasH - p.position.getY();
 		int newX = p.position.getX();
