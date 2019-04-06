@@ -15,6 +15,10 @@ float Matrix4::get(int row, int col) {
 	return mat[row][col];
 }
 
+void Matrix4::set(int row, int col, float val) {
+	mat[row][col] = val;
+}
+
 // -------------------------
 
 void Matrix3::print() {
@@ -32,6 +36,10 @@ float Matrix3::get(int row, int col) {
 	return mat[row][col];
 }
 
+void Matrix3::set(int row, int col, float val) {
+	mat[row][col] = val;
+}
+
 // -------------------------
 
 void Matrix2::print() {
@@ -47,4 +55,8 @@ void Matrix2::print() {
 
 float Matrix2::get(int row, int col) {
 	return mat[row][col];
+}
+
+void Matrix2::set(int row, int col, float val) {
+	mat[row][col] = val;
 }

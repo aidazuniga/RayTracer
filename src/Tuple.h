@@ -1,7 +1,6 @@
 #pragma once
 
 #include <cmath>
-#include "Utils.h"
 
 class Tuple {
 public:
@@ -30,8 +29,6 @@ private:
 };
 
 // -------------------------
-
-bool equalTuples(Tuple a, Tuple b);
 
 Tuple createPoint(float x, float y, float z);
 Tuple createVector(float x, float y, float z);

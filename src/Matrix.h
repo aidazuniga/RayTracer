@@ -34,6 +34,7 @@ public:
 	virtual ~Matrix4() = default;
 	void print();
 	float get(int row, int col);
+	void set(int row, int col, float val);
 
 private:
 	float mat[4][4];
@@ -63,6 +64,7 @@ public:
 	virtual ~Matrix3() = default;
 	void print();
 	float get(int row, int col);
+	void set(int row, int col, float val);
 
 private:
 	float mat[3][3];
@@ -85,7 +87,10 @@ public:
 	virtual ~Matrix2() = default;
 	void print();
 	float get(int row, int col);
+	void set(int row, int col, float val);
 
 private:
 	float mat[2][2];
 };
+
+// -------------------------

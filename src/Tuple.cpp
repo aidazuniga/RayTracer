@@ -50,16 +50,6 @@ float Tuple::getW() {
 
 // -------------------------
 
-bool equalTuples(Tuple a, Tuple b) {
-  if (equal(a.getX(), b.getX()) && 
-    equal(a.getY(), b.getY()) &&
-    equal(a.getZ(), b.getZ()) &&
-    equal(a.getW(), b.getW())) {
-    return true;
-  }
-  return false;
-}
-
 Tuple createPoint(float x, float y, float z) {
   return Tuple(x, y, z, 1.0);
 }
