@@ -82,3 +82,20 @@ cxx_library(
     'PUBLIC',
   ],
 )
+
+cxx_library(
+  name = 'matrix',
+  srcs = [
+    'Matrix.cpp',
+  ],
+  header_namespace = '',
+  exported_headers = [
+    'Matrix.h',
+  ],
+  headers = [
+    'Matrix.h',
+  ],
+  visibility = [
+    'PUBLIC',
+  ],
+)

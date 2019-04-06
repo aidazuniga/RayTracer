@@ -2,6 +2,7 @@
 #include "src/Tuple.h"
 #include "src/Color.h"
 #include "src/Canvas.h"
+#include "src/Matrix.h"
 #include "src/Exercise.h"
 
 #include <iostream>

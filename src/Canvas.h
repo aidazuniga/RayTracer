@@ -36,5 +36,3 @@ private:
 	float height;
 	std::vector<std::vector<Color>> pixels;
 };
-
-// -------------------------

@@ -73,7 +73,7 @@ TEST(ConsructPPMHeader, CanvasTest) {
   c.writePixel(0, 0, c1);
   c.writePixel(2, 1, c2);
   c.writePixel(4, 2, c3);
-  c.toPPM();
+  c.toPPM("canvastest.ppm");
 }
 
 /*
@@ -96,5 +96,5 @@ Scenario: PPM files are terminated by a newline character
 TEST(PPMLongLines, CanvasTest) {
 	Canvas c(10, 2);
   c.colorEveryPixel(Color(1, 0.8, 0.6));
-  c.toPPM();
+  c.toPPM("canvastest.ppm");
 }
